@@ -21,7 +21,7 @@ export default function Sidebar({ handleLogout }) {
     { name: "View Employees Details", path: "/employeeList" },
     { name: "Recruitment Management", path: "/Recruitment/recruitment" },
     { name: "Reporting and Analytics", path: "/ViewDetails" },
-    { name: "Compliance management", path: "/ViewDetails" },
+    { name: "Compliance management", path: "/compliance" },
   ];
 
   const attendanceSubItems = [

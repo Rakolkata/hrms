@@ -1,7 +1,8 @@
-//generate payroll for each employee
+//generate payroll for each employee (individual)
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Sidebar from '/components/SideBar';
+import { FaEye } from 'react-icons/fa';
 
 export default function EmployeePayroll() {
   const router = useRouter();
@@ -61,6 +62,8 @@ export default function EmployeePayroll() {
                 <th className="py-3 px-4 text-left">Allowances</th>
                 <th className="py-3 px-4 text-left">Deductions</th>
                 <th className="py-3 px-4 text-left">Net Pay</th>
+                <th className="py-3 px-4 text-left">Actions</th>
+
               </tr>
             </thead>
             <tbody className="text-sm text-gray-700">
@@ -75,6 +78,16 @@ export default function EmployeePayroll() {
                     <td className="py-3 px-4">₹{row.allowances}</td>
                     <td className="py-3 px-4">₹{row.deductions}</td>
                     <td className="py-3 px-4 font-semibold text-indigo-700">₹{row.net_pay}</td>
+                    <td className="py-3 px-4 space-x-2">
+                        <a
+                          href={`/hr/payroll/payslip-preview/${empid}?month=${row.month}&year=${row.year}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className=" text-blue-700 px-2 py-1 rounded-full text-sm"
+                        >
+                          <FaEye className="inline-block mr-1" />
+                        </a>
+                      </td>
                   </tr>
                 ))
               ) : (

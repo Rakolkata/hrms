@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Sidebar from '/Components/SideBar';
 import { jsPDF } from 'jspdf';
 import html2canvas from 'html2canvas';
+import { FaEye, FaDownload } from 'react-icons/fa';
 
 export default function PayrollView() {
   const [payrolls, setPayrolls] = useState([]);
@@ -57,7 +58,7 @@ export default function PayrollView() {
             </thead>
             <tbody className="divide-y divide-gray-200">
               {payrolls.map((item, index) => (
-                <tr key={index} className={`hover:bg-indigo-300 ${index % 2 === 0 ? "bg-indigo-50" : "bg-white"}`}>
+                <tr key={index} className={`hover:bg-indigo-300 ${index % 2 === 0 ? "bg-indigo-50" : "bg-indigo-200"}`}>
                   <td className="px-4 py-2">{item.empid}</td>
                   <td className="px-4 py-2">{item.name}</td>
                   <td className="px-4 py-2">{item.position}</td>
@@ -65,15 +66,15 @@ export default function PayrollView() {
                   <td className="px-4 py-2">{item.year}</td>
                   <td className="px-4 py-2">₹{item.net_pay}</td>
                   <td className="px-4 py-2 text-center space-x-2">
-                    <Link href={`/hr/payroll/${item.empid}`} className="bg-blue-100 hover:bg-blue-200 text-blue-700 px-2 py-1 rounded-full">
-                      View
-                    </Link>
-                    <Link
-                    href={`/hr/payroll/payslip-preview/${item.empid}?month=${item.month}&year=${item.year}`}
-                    className="bg-blue-100 hover:bg-blue-200 text-blue-700 px-2 py-1 rounded-full"
-                    >
-                    VP
-                    </Link>
+                    <Link href={`/hr/payroll/${item.empid}`} className="text-indigo-600 px-2 py-1 rounded-full">
+                      <FaEye className="inline-block mr-1" /> 
+                      </Link>
+                      <Link
+                        href={`/hr/payroll/payslip-preview/${item.empid}?month=${item.month}&year=${item.year}`}
+                        className="text-green-700 px-2 py-1 rounded-full"
+                      >
+                        <FaDownload className="inline-block mr-1" />
+                      </Link>
                   </td>
                 </tr>
               ))}
