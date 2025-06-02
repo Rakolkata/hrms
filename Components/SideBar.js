@@ -5,7 +5,8 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 export default function Sidebar({ handleLogout }) {
   const router = useRouter();
   const [attendanceOpen, setAttendanceOpen] = useState(false);
-  const [payrollOpen, setPayrollOpen] = useState(false); // NEW
+  const [payrollOpen, setPayrollOpen] = useState(false); 
+  const [complianceOpen, setComplianceOpen] = useState(false);
 
   const toggleAttendanceMenu = () => {
     setAttendanceOpen(!attendanceOpen);
@@ -14,6 +15,10 @@ export default function Sidebar({ handleLogout }) {
   const togglePayrollMenu = () => {
     setPayrollOpen(!payrollOpen);
   };
+
+  const toggleComplianceMenu = () => {
+    setComplianceOpen(!complianceOpen)
+  }
 
   const navItems = [
     { name: "Dashboard", path: "/dashboard" },
@@ -33,6 +38,15 @@ export default function Sidebar({ handleLogout }) {
   const payrollSubItems = [
     { name: "View Payrolls", path: "/hr/payroll/payroll-view" },
     { name: "Generate Payroll", path: "/hr/payroll/generate" },
+  ];
+
+  const complianceSubItems = [
+    { name: "Employee Compliance", path: "/compliance/empCompliance" },
+    { name: "Statutory Compliance", path: "/compliance/statutoryCompliance" },
+    { name: "Document Center", path: "/compliance/documentCenter" },
+    { name: "Policy Acknowledgements", path: "/compliance/policyAcknowledge" },
+    { name: "Audit Logs", path: "/compliance/auditLog" },
+    { name: "Reports & Filings", path: "/compliance/ReportFillings" },
   ];
 
   return (
@@ -87,6 +101,31 @@ export default function Sidebar({ handleLogout }) {
           {payrollOpen && (
             <ul className="pl-6 pt-2 space-y-2">
               {payrollSubItems.map((subItem) => (
+                <li key={subItem.name}>
+                  <button
+                    onClick={() => router.push(subItem.path)}
+                    className="w-full text-left text-sm px-3 py-2 bg-gray-700 rounded-lg hover:bg-indigo-500 transition"
+                  >
+                    {subItem.name}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+        </li>
+
+        {/* Compliance Management */}
+        <li>
+          <button
+            onClick={toggleComplianceMenu}
+            className="w-full text-left flex justify-between items-center px-4 py-3 bg-gray-800 rounded-lg hover:bg-indigo-600 transition"
+          >
+            <span>Compliance Management</span>
+            {complianceOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+          </button>
+          {complianceOpen && (
+            <ul className="pl-6 pt-2 space-y-2">
+              {complianceSubItems.map((subItem) => (
                 <li key={subItem.name}>
                   <button
                     onClick={() => router.push(subItem.path)}

@@ -1,6 +1,12 @@
 import React from "react";
+import Link from "next/link";
 import { FaUserTie } from "react-icons/fa";
-import { HiOutlineHome, HiOutlineInformationCircle, HiOutlineMail, HiOutlineUserAdd } from "react-icons/hi";
+import {
+  HiOutlineHome,
+  HiOutlineInformationCircle,
+  HiOutlineMail,
+  HiOutlineUserAdd,
+} from "react-icons/hi";
 
 const Header = () => {
   return (
@@ -12,22 +18,22 @@ const Header = () => {
         </div>
 
         <nav className="flex space-x-8 mt-4 md:mt-0 text-lg font-medium">
-          <a href="/" className="flex items-center space-x-2 hover:text-yellow-300 transition-all duration-200">
+          <Link href="/" className="flex items-center space-x-2 hover:text-yellow-300 transition-all duration-200">
             <HiOutlineHome />
             <span>Home</span>
-          </a>
-          <a className="flex items-center space-x-2 hover:text-yellow-300 transition-all duration-200">
+          </Link>
+          <Link href="/AboutUs" className="flex items-center space-x-2 hover:text-yellow-300 transition-all duration-200">
             <HiOutlineInformationCircle />
             <span>About Us</span>
-          </a>
-          <a className="flex items-center space-x-2 hover:text-yellow-300 transition-all duration-200">
+          </Link>
+          <Link href="/contact" className="flex items-center space-x-2 hover:text-yellow-300 transition-all duration-200">
             <HiOutlineMail />
             <span>Contact</span>
-          </a>
-          <a className="flex items-center space-x-2 hover:text-yellow-300 transition-all duration-200">
+          </Link>
+          <Link href="/signup" className="flex items-center space-x-2 hover:text-yellow-300 transition-all duration-200">
             <HiOutlineUserAdd />
             <span>Signup</span>
-          </a>
+          </Link>
         </nav>
       </header>
     </div>
