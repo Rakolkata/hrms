@@ -48,7 +48,7 @@ export default function Compliance() {
         <div className="mb-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
           <div className="p-6 bg-white shadow-lg rounded-lg text-center">
             <h2 className="text-xl font-bold text-gray-700">Compliance Status</h2>
-            <p className="text-sm text-gray-500">PF/ESI/Gratuity</p>
+           <p className="text-sm text-gray-500">PF/ESI/Gratuity</p>
             <button
               className="mt-4 px-6 py-2 bg-green-300 text-gray rounded-lg hover:bg-green-600 transition duration-200"
               onClick={() => setFilterStatus('Compliant')}

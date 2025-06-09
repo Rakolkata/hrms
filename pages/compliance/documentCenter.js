@@ -49,7 +49,7 @@ export default function DocumentCenter() {
                         className="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition duration-200"
                         onClick={() => handleSignDocument(doc.id)}
                       >
-                        Request Signature
+                        Request Signature                  
                       </button>
                     )}
                     {doc.status === 'Signed' && <span className="text-green-600">Signed</span>}

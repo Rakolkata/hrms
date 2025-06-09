@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
+import Tesseract from "tesseract.js";
+import * as pdfjsLib from "pdfjs-dist";
+
+
 
 export default function CandidateForm() {
   const router = useRouter();
@@ -32,6 +36,35 @@ export default function CandidateForm() {
     contact_no: "",
   });
 
+  pdfjsLib.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.js`;
+
+  const extractTextFromPdf = async (file) => {
+    const reader = new FileReader();
+    return new Promise((resolve, reject) => {
+      reader.onload = async function () {
+        const typedarray = new Uint8Array(this.result);
+  
+        const pdf = await pdfjsLib.getDocument({ data: typedarray }).promise;
+        const page = await pdf.getPage(1);
+  
+        const viewport = page.getViewport({ scale: 2 });
+        const canvas = document.createElement("canvas");
+        const context = canvas.getContext("2d");
+  
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+  
+        await page.render({ canvasContext: context, viewport }).promise;
+  
+        const imageDataURL = canvas.toDataURL("image/png");
+  
+        const result = await Tesseract.recognize(imageDataURL, "eng");
+        resolve(result.data.text);
+      };
+      reader.onerror = reject;
+      reader.readAsArrayBuffer(file);
+    });
+  };
   useEffect(() => {
     if (id) {
       axios
@@ -47,14 +80,35 @@ export default function CandidateForm() {
     }
   }, [id]);
 
-  const handleChange = (e) => {
+  const handleChange = async (e) => {
     const { name, value, files, type } = e.target;
-
+  
     if (type === "file") {
+      const file = files[0];
+  
       setFormData((prev) => ({
         ...prev,
-        [name]: files[0],
+        [name]: file,
       }));
+  
+      // If it's Aadhar PDF, try to extract number
+      if (name === "aadhar_card" && file.type === "application/pdf") {
+        try {
+          const text = await extractTextFromPdf(file);
+          const match = text.match(/\b\d{4}\s\d{4}\s\d{4}\b/); // Aadhaar pattern
+          if (match) {
+            setFormData((prev) => ({
+              ...prev,
+              aadhar_number: match[0].replace(/\s/g, ""), // remove spaces
+            }));
+          } else {
+            alert("Unable to detect Aadhaar number in the uploaded PDF.");
+          }
+        } catch (err) {
+          console.error("OCR error:", err);
+          alert("Failed to process Aadhaar card for OCR.");
+        }
+      }
     } else {
       setFormData((prev) => ({
         ...prev,
@@ -62,6 +116,7 @@ export default function CandidateForm() {
       }));
     }
   };
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();

@@ -40,6 +40,11 @@ export default function Sidebar({ handleLogout }) {
     { name: "Generate Payroll", path: "/hr/payroll/generate" },
   ];
 
+  const performanceSubItems = [
+    { name: "Goal Setting", path: "/hr/payroll/payroll-view" },
+    { name: "Report Apraisal", path: "/hr/payroll/generate" },
+  ];
+
   const complianceSubItems = [
     { name: "Employee Compliance", path: "/compliance/empCompliance" },
     { name: "Statutory Compliance", path: "/compliance/statutoryCompliance" },
