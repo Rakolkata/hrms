@@ -109,7 +109,7 @@ export default function ComplianceDashboard() {
       </button>
 
       <h2 className="text-2xl font-bold text-center text-indigo-700 mb-6">
-        {selectedEmployee.name}'s Document Details
+        {selectedEmployee.name}&apos;s Document Details
       </h2>
 
       {/* Documents Table */}
@@ -171,9 +171,7 @@ export default function ComplianceDashboard() {
       </div>
     </div>
   </div>
-  
 )}
-
       </div>
     </div>
   );

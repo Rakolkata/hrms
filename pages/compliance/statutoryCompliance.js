@@ -104,7 +104,6 @@ export default function Compliance() {
                   <td className="px-4 py-3">{emp.name}</td>
                   <td className="px-4 py-3">{emp.department}</td>
                   <td className="px-4 py-3">{emp.role}</td>
-                  
                   <td className="px-4 py-3">{emp.pf}</td>
                   <td className="px-4 py-3">{emp.esi}</td>
                   <td className="px-4 py-3">{emp.gratuity}</td>
@@ -129,7 +128,7 @@ export default function Compliance() {
         {selectedEmployee && (
           <div className="fixed inset-0 flex items-center justify-center bg-gray-600 bg-opacity-50">
             <div className="bg-white p-6 rounded-lg shadow-lg max-w-lg w-full">
-              <h2 className="text-2xl font-bold text-indigo-700">{selectedEmployee.name}'s Compliance Details</h2>
+              <h2 className="text-2xl font-bold text-indigo-700">{selectedEmployee.name}&apos;s Compliance Details</h2>
               <div className="mt-4">
                 <p><strong>Employee ID:</strong> {selectedEmployee.empid}</p>
                 <p><strong>Department:</strong> {selectedEmployee.department}</p>

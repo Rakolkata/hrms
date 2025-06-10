@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Sidebar from '/Components/empSidebar';
+import Image from "next/image";
+
 
 export default function EmployeeDashboard() {
     const [user, setUser] = useState(null);
@@ -54,12 +56,15 @@ export default function EmployeeDashboard() {
 
                     {/* Profile Image */}
                     <div className="flex justify-center mb-6">
-                        <img
-                            src={user?.profile_photo || "/profile.png"} // Use the `profile_photo` from the database
+                        <Image
+                            src={user?.profile_photo || "/profile.png"}
                             alt="Profile Image"
-                            className="w-32 h-32 rounded-full object-cover border-4 border-blue-500"
+                            width={128}
+                            height={128}
+                            className="rounded-full object-cover border-4 border-blue-500"
                         />
-                    </div>
+                        </div>
+
 
                     {/* Profile details */}
                     {user && (

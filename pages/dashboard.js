@@ -26,7 +26,7 @@ export default function Dashboard() {
             console.error("Token error:", error);
             router.push("/login");
         }
-    }, []);
+    }, [router]);
 
     if (!user) {
         return <div className="p-6 text-gray-700">Loading...</div>;
