@@ -7,6 +7,8 @@ export default function Sidebar({ handleLogout }) {
   const [attendanceOpen, setAttendanceOpen] = useState(false);
   const [payrollOpen, setPayrollOpen] = useState(false); 
   const [complianceOpen, setComplianceOpen] = useState(false);
+  const [performanceOpen, setPerformanceOpen] = useState(false);
+
 
   const toggleAttendanceMenu = () => {
     setAttendanceOpen(!attendanceOpen);
@@ -20,6 +22,10 @@ export default function Sidebar({ handleLogout }) {
     setComplianceOpen(!complianceOpen)
   }
 
+  const togglePerformanceMenu = () => {
+    setPerformanceOpen(!performanceOpen)
+  }
+
   const navItems = [
     { name: "Dashboard", path: "/dashboard" },
     { name: "Add Employee", path: "/registerEmployee" },
@@ -27,6 +33,7 @@ export default function Sidebar({ handleLogout }) {
     { name: "Recruitment Management", path: "/Recruitment/recruitment" },
     { name: "Reporting and Analytics", path: "/ViewDetails" },
     { name: "Compliance management", path: "/compliance" },
+    { name: "Performance Management", path: "/compliance" },
   ];
 
   const attendanceSubItems = [
@@ -41,8 +48,8 @@ export default function Sidebar({ handleLogout }) {
   ];
 
   const performanceSubItems = [
-    { name: "Goal Setting", path: "/hr/payroll/payroll-view" },
-    { name: "Report Apraisal", path: "/hr/payroll/generate" },
+    { name: "Goal Setting", path: "/hr/performance/goals" },
+    { name: "Report Apraisal", path: "/hr/performance/reports" },
   ];
 
   const complianceSubItems = [
@@ -131,6 +138,31 @@ export default function Sidebar({ handleLogout }) {
           {complianceOpen && (
             <ul className="pl-6 pt-2 space-y-2">
               {complianceSubItems.map((subItem) => (
+                <li key={subItem.name}>
+                  <button
+                    onClick={() => router.push(subItem.path)}
+                    className="w-full text-left text-sm px-3 py-2 bg-gray-700 rounded-lg hover:bg-indigo-500 transition"
+                  >
+                    {subItem.name}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+        </li>
+
+        {/* Performance Management */}
+        <li>
+          <button
+            onClick={togglePerformanceMenu}
+            className="w-full text-left flex justify-between items-center px-4 py-3 bg-gray-800 rounded-lg hover:bg-indigo-600 transition"
+          >
+            <span>Performance Management</span>
+            {performanceOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+          </button>
+          {performanceOpen && (
+            <ul className="pl-6 pt-2 space-y-2">
+              {performanceSubItems.map((subItem) => (
                 <li key={subItem.name}>
                   <button
                     onClick={() => router.push(subItem.path)}
