@@ -43,4 +43,3 @@ next-env.d.ts
 #more files
 .env.local
 public/uploads
-lib/
