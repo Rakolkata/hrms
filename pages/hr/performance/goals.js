@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import SideBar from '@/Components/SideBar';
+import SideBar from "@/Components/SideBar";
 
 export default function GoalSetting() {
   const [goals, setGoals] = useState([

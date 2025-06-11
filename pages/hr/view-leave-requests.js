@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-
 import moment from 'moment'; 
-import Sidebar from '/Components/SideBar'; 
+import SideBar from "@/Components/SideBar";
+
 export default function ViewLeaveRequests() {
   const [leaveData, setLeaveData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -50,7 +50,7 @@ export default function ViewLeaveRequests() {
   return (
     <div className="flex">
   {/* Sidebar */}
-  <Sidebar />
+  <SideBar />
 
   {/* Main Content */}
   <div className="min-h-screen w-full p-8 text-gray-900 "> {/* Adjusted to leave space for sidebar */}
@@ -103,7 +103,5 @@ export default function ViewLeaveRequests() {
     </div>
   </div>
 </div>
-
-  
-  );
+);
 }

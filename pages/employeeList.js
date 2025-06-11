@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Sidebar from "/components/Sidebar";
+import SideBar from "@/Components/SideBar";
 import { useRouter } from "next/router";
 import { FaEye, FaEdit, FaTrash } from "react-icons/fa";
 
@@ -53,7 +53,7 @@ export default function EmployeeListPage() {
     return (
         <div className="flex min-h-screen bg-gradient-to-br from-indigo-200 via-white to-purple-200">
           {/* Sidebar */}
-          <Sidebar handleLogout={handleLogout} />
+          <SideBar handleLogout={handleLogout} />
       
           {/* Main Content */}
           <div className="flex-1 p-8">

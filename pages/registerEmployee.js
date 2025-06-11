@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
-import Sidebar from "/components/Sidebar"; 
+import SideBar from "@/Components/SideBar";
 
 export default function RegisterEmployee() {
     const router = useRouter();
@@ -56,7 +56,7 @@ export default function RegisterEmployee() {
         <div className="flex min-h-screen">
             {/* Sidebar on the left */}
             <div >
-                <Sidebar
+                <SideBar
                     setShowForm={() => {}}
                     setShowEmployees={() => {}}
                     showEmployees={false}

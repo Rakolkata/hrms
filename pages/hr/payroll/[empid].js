@@ -1,7 +1,7 @@
 //generate payroll for each employee (individual)
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import Sidebar from '/components/SideBar';
+import SideBar from "@/Components/SideBar";
 import { FaEye } from 'react-icons/fa';
 
 export default function EmployeePayroll() {
@@ -27,7 +27,7 @@ export default function EmployeePayroll() {
 
   return (
     <div className="flex">
-      <Sidebar />
+      <SideBar />
 
       <main className="flex-1 p-8 bg-gray-50 min-h-screen">
         <h1 className="text-3xl font-semibold text-indigo-700 mb-6">

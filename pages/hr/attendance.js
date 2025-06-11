@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Sidebar from "@/Components/SideBar";
+import SideBar from "@/Components/SideBar";
 import { FaEye } from 'react-icons/fa';
 import { useRouter } from "next/router";
 
@@ -41,7 +41,7 @@ export default function AttendanceTable() {
   return (
     <div className="min-h-screen bg-gradient-to-r from-indigo-50 to-indigo-100 flex">
       {/* Sidebar */}
-      <Sidebar />
+      <SideBar />
   
       {/* Main Content */}
       <div className="p-8 w-full">

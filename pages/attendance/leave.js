@@ -1,9 +1,9 @@
-import Sidebar from "/components/Sidebar";
+import SideBar from "@/Components/SideBar";
 
 export default function LeaveManagement() {
     return (
       <div className="min-h-screen bg-gradient-to-br from-purple-100 via-indigo-100 to-white flex">
-        <Sidebar/>
+        <SideBar/>
         <div className="flex-1 flex items-center justify-center">
           <div className="bg-white shadow-xl rounded-3xl w-full max-w-4xl p-10">
             <h2 className="text-3xl font-bold text-indigo-700 mb-8 text-center">Leave Management Portal</h2>

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { FiMail, FiLock } from "react-icons/fi";
+import Image from 'next/image';
 import jwt from "jsonwebtoken";
 
 export default function Login() {
@@ -43,7 +44,7 @@ export default function Login() {
             <div className="flex flex-grow">
                 {/* Left Side - Image */}
                 <div className="w-1/1 flex items-center justify-center bg-amber-10">
-                    <img src="/img3.jpg" className="w-mx" />
+                    <Image src="/img3.jpg" alt="logo" className="w-mx" />
                 </div>
 
                 {/* Right Side - Login */}

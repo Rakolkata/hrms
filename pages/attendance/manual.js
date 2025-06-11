@@ -1,9 +1,9 @@
-import Sidebar from "/components/Sidebar";
+import SideBar from "@/Components/SideBar";
 
 export default function ManualAttendance() {
   return (
     <div className="min-h-screen bg-gradient-to-r from-indigo-100 to-purple-100 flex">
-      <Sidebar />
+      <SideBar />
       <div className="flex-1 flex justify-center items-center">
         <div className="bg-white shadow-2xl rounded-3xl p-10 w-full max-w-5xl space-y-6">
           <h2 className="text-3xl font-bold text-center text-indigo-700">Manual Attendance Tracker</h2>

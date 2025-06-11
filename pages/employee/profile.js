@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { AiOutlineEye, AiOutlineEdit } from 'react-icons/ai';
 import SideBar from '/Components/empSidebar';
 import axios from 'axios';
+import Image from 'next/image';
 
 const ProfilePage = () => {
   const [profile, setProfile] = useState(null);
@@ -12,14 +13,14 @@ const ProfilePage = () => {
       const token = localStorage.getItem('token');
       if (!token) return;
 
-      try {
-        const res = await axios.get('/api/employee/profile', {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-        setProfile(res.data);
-      } catch (err) {
-        console.error('Fetch error:', err);
-      }
+      //try {
+        //const res = await axios.get('/api/employee/profile', {
+          //headers: { Authorization: `Bearer ${token}` },
+      //  });
+      //  setProfile(res.data);
+      //} catch (err) {
+        //console.error('Fetch error:', err);
+     // }
     };
 
     fetchProfile();
@@ -47,10 +48,12 @@ const ProfilePage = () => {
               {profile && (
                 <tr className="border-b hover:bg-indigo-50 transition">
                   <td className="py-4 px-6">
-                    <img
+                    <Image
                       src={profile.profile_photo || '/profile.png'}
                       alt="Profile"
-                      className="w-14 h-14 rounded-full border-2 border-indigo-600 shadow"
+                      width={56}
+                      height={56}
+                      className="rounded-full border-2 border-indigo-600 shadow"
                     />
                   </td>
                   <td className="py-4 px-6">{profile.empid}</td>

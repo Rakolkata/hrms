@@ -1,4 +1,4 @@
-import Sidebar from "/components/Sidebar";
+import SideBar from "@/Components/SideBar";
 import {
   BarChart,
   Bar,
@@ -36,7 +36,7 @@ const COLORS = ["#4ade80", "#f43f5e"]; // green, red
 export default function AttendanceAnalytics() {
   return (
     <div className="min-h-screen bg-gradient-to-r from-indigo-50 via-purple-100 to-white flex">
-      <Sidebar />
+      <SideBar />
       <div className="flex-1 p-6 md:p-10">
         <h2 className="text-4xl font-bold text-center text-indigo-700 mb-10">
           Attendance Analytics

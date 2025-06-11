@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useRef } from 'react';
 import Link from 'next/link';
-import Sidebar from '/Components/SideBar';
+import SideBar from "@/Components/SideBar";
 import { jsPDF } from 'jspdf';
 import html2canvas from 'html2canvas';
 import { FaEye, FaDownload } from 'react-icons/fa';
@@ -38,7 +38,7 @@ export default function PayrollView() {
 
   return (
     <div className="flex min-h-screen bg-gradient-to-br from-indigo-200 via-white to-purple-200">
-      <Sidebar />
+      <SideBar />
 
       <div className="flex-1 p-8">
         <div className="bg-white shadow-xl rounded-2xl p-6 overflow-x-auto">

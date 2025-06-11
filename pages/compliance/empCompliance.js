@@ -1,8 +1,7 @@
 // pages/compliance.js
 import { useState } from 'react';
-import SideBar from '/Components/SideBar';
+import SideBar from "@/Components/SideBar";
 import { Eye } from 'lucide-react';
-import Footer from '@/Components/Footer';
 
 export default function ComplianceDashboard() {
   const [filter, setFilter] = useState('All');

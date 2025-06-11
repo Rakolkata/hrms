@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import jwt from "jsonwebtoken";
-import Sidebar from "@/Components/SideBar";
+import SideBar from "@/Components/SideBar";
 
 export default function Dashboard() {
     const [user, setUser] = useState(null);
@@ -34,7 +34,7 @@ export default function Dashboard() {
 
     return (
         <div className="flex min-h-screen bg-gray-100">
-            <Sidebar />
+            <SideBar />
             <div className="flex-1 p-6 overflow-auto">
                 <div className="bg-white p-6 rounded-lg shadow-md">
                     <h2 className="text-3xl font-semibold text-indigo-700 mb-2">Welcome, {user.name}</h2>

@@ -1,12 +1,13 @@
 
 import { useState } from "react";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 export default function Signup() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [role, setRole] = useState("HR"); // default
+    const [role, setRole] = useState("HR"); 
     const [message, setMessage] = useState("");
     const router = useRouter();
 
@@ -29,7 +30,7 @@ export default function Signup() {
         <div className="min-h-screen flex flex-col">
             <div className="flex flex-grow">
                 <div className="w-1/2 flex items-center justify-center bg-gray-50">
-                    <img src="/img3.jpg" alt="HRMS Banner" className="max-w-full max-h-full" />
+                    <Image src="/img3.jpg" alt="HRMS Banner" className="max-w-full max-h-full" />
                 </div>
 
                 <div className="w-1/2 flex flex-col items-center justify-center bg-gray-50 text-center p-10">

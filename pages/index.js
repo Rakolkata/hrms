@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from 'next/image';
+
 export default function Home() {
     return (
         <>
@@ -9,7 +11,7 @@ export default function Home() {
                 {/* Left Side - Image */}
                 
                 <div className="w-1/1 flex items-center justify-center bg-amber-10">
-                    <img src="/img3.jpg" className="w-mx"/>
+                    <Image src="/img3.jpg" alt="" className=""/>
                 </div>
 
                 {/* Right Side - Welcome Text & Buttons */}

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import Sidebar from "@/Components/SideBar"; 
+import SideBar from "@/Components/SideBar";
 
 const ViewAttendance = () => {
   const [attendanceData, setAttendanceData] = useState([]);
@@ -53,7 +53,7 @@ const ViewAttendance = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-indigo-50 to-indigo-100 flex">
-      <Sidebar />
+      <SideBar />
       <div className="p-8 w-full">
         <h2 className="text-3xl font-bold mb-8 text-indigo-700 text-center">
           Attendance Details for Employee {empid}

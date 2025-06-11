@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
-import SideBar from "@/Components/SideBar"; // Adjust the path if needed
+import SideBar from "@/Components/SideBar";
 import { format } from 'date-fns';
 import { AiOutlineEye } from 'react-icons/ai';
-
+import Image from 'next/image';
 
 export default function CandidateDetails() {
   const [candidate, setCandidate] = useState(null);
@@ -12,17 +12,11 @@ export default function CandidateDetails() {
   const [error, setError] = useState(null);
 
   const router = useRouter();
-  const { candidate_id } = router.query; // Get the candidate_id from the URL
+  const { candidate_id } = router.query; // to get the candidate_id from the URL
 
   useEffect(() => {
-    if (candidate_id) {
-      fetchCandidateDetails();
-    }
-  }, [candidate_id]);
-
   const fetchCandidateDetails = async () => {
     try {
-      // Fetch the candidate details by candidate_id
       const res = await axios.get(`/api/recruitment/getEmployeeById?id=${candidate_id}`);
       setCandidate(res.data);
       setLoading(false);
@@ -32,6 +26,12 @@ export default function CandidateDetails() {
       setLoading(false);
     }
   };
+
+  if (candidate_id) {
+    fetchCandidateDetails();
+  }
+}, [candidate_id]);
+
 
 
   if (loading) {
@@ -68,10 +68,12 @@ export default function CandidateDetails() {
           <div className="bg-white p-10 rounded-3xl shadow-2xl space-y-10 transform hover:scale-[1.02] transition duration-300 ease-in-out">
             {/* Profile Image */}
             <div className="flex justify-center">
-              <img
+              <Image
                 src={candidate.profile_photo || '/profile.png'}
                 alt="Profile"
-                className="w-40 h-40 rounded-full object-cover border-4 border-indigo-300 shadow-xl"
+                 width={160}
+                height={160}
+                className="rounded-full object-cover border-4 border-indigo-300 shadow-xl"
               />
             </div>
   

@@ -2,7 +2,8 @@ import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
 import { jsPDF } from "jspdf";
 import html2canvas from "html2canvas";
-import Sidebar from "/Components/SideBar";
+import SideBar from "@/Components/SideBar";
+import Image from 'next/image';
 
 export default function PayslipPreview() {
   const router = useRouter();
@@ -87,7 +88,7 @@ export default function PayslipPreview() {
 
   return (
     <div style={{ display: "flex", minHeight: "100vh", background: "#F3F4F6" }}>
-      <Sidebar /> {/* Add the Sidebar component here */}
+      <SideBar /> {/* Add the Sidebar component here */}
 
       <div style={{ flex: 1, padding: "2rem", display: "flex", flexDirection: "column", alignItems: "center" }}>
         <div
@@ -102,7 +103,7 @@ export default function PayslipPreview() {
           }}
         >
           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "1.5rem" }}>
-            <img src="/profile_icon.jpg" alt="Logo" style={{ height: "3rem" }} />
+          <Image src="/profile_icon.jpg" alt="Logo" width={48} height={48} />
             <div style={{ textAlign: "right" }}>
               <h1 style={{ fontSize: "1.5rem", fontWeight: "bold", color: "#4F46E5" }}>PAYSLIP</h1>
               <p style={{ fontSize: "0.875rem", color: "#4B5563" }}>{month} {year}</p>

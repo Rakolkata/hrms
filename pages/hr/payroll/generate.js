@@ -1,6 +1,6 @@
 //generate payroll list page
 import { useEffect, useState } from "react";
-import Sidebar from "/Components/SideBar";
+import SideBar from "@/Components/SideBar";
 import { useRouter } from "next/router";
 import toast from "react-hot-toast";
 
@@ -44,7 +44,7 @@ export default function GeneratePayrollPage() {
   return (
     <div className="flex">
       {/* Sidebar */}
-      <Sidebar handleLogout={() => {}} />
+      <SideBar handleLogout={() => {}} />
 
       {/* Main Content */}
       <div className="flex-1 p-10 bg-white">

@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import Sidebar from "/Components/SideBar";
+import SideBar from "@/Components/SideBar";
 
 export default function PayrollForm() {
   const router = useRouter();
@@ -153,7 +153,7 @@ export default function PayrollForm() {
   return (
     <div className="flex min-h-screen">
       {/* Sidebar */}
-      <Sidebar handleLogout={() => {}} />
+      <SideBar handleLogout={() => {}} />
 
       {/* Centered form content */}
       <div className="flex-1 flex justify-center items-center p-4">

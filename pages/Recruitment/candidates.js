@@ -1,4 +1,4 @@
-import SideBar from "/Components/SideBar";
+import SideBar from "@/Components/SideBar";
 import { useRouter } from "next/router";
 
 export default function RecruitmentDashboard() {

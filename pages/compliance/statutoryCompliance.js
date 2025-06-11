@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import SideBar from '/Components/SideBar';
+import SideBar from "@/Components/SideBar";
 import { FaEye } from 'react-icons/fa';
+
 export default function Compliance() {
   const [employees, setEmployees] = useState([
   { empid: 'EMP1001', name: 'John Doe', department: 'HR', role: 'Full-time', status: 'Compliant', pf: 1200, esi: 800, gratuity: 5000, tds: 1500, leave: 15, workingHours: 45 },

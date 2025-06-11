@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import SideBar from '/components/SideBar';
+import SideBar from "@/Components/SideBar";
 import { FaUser, FaEnvelope, FaBriefcase, FaCalendarAlt, FaRegClock, FaImage, FaIdCard, FaLock } from 'react-icons/fa';
 
 const AddEmployee = () => {
