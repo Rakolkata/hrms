@@ -1,0 +1,310 @@
+{
+  "version": 3,
+  "pages404": true,
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [],
+  "dynamicRoutes": [
+    {
+      "page": "/Recruitment/add/[id]",
+      "regex": "^/Recruitment/add/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/Recruitment/add/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/Recruitment/form/[id]",
+      "regex": "^/Recruitment/form/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/Recruitment/form/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/Recruitment/[candidate_id]",
+      "regex": "^/Recruitment/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPcandidate_id": "nxtPcandidate_id"
+      },
+      "namedRegex": "^/Recruitment/(?<nxtPcandidate_id>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/candidate/[id]",
+      "regex": "^/api/candidate/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/api/candidate/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/hr/attendance/[empid]",
+      "regex": "^/api/hr/attendance/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPempid": "nxtPempid"
+      },
+      "namedRegex": "^/api/hr/attendance/(?<nxtPempid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/hr/employees/[empid]",
+      "regex": "^/api/hr/employees/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPempid": "nxtPempid"
+      },
+      "namedRegex": "^/api/hr/employees/(?<nxtPempid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/hr/attendance/[empid]",
+      "regex": "^/hr/attendance/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPempid": "nxtPempid"
+      },
+      "namedRegex": "^/hr/attendance/(?<nxtPempid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/hr/payroll/form/[empid]",
+      "regex": "^/hr/payroll/form/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPempid": "nxtPempid"
+      },
+      "namedRegex": "^/hr/payroll/form/(?<nxtPempid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/hr/payroll/payslip-preview/[empid]",
+      "regex": "^/hr/payroll/payslip\\-preview/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPempid": "nxtPempid"
+      },
+      "namedRegex": "^/hr/payroll/payslip\\-preview/(?<nxtPempid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/hr/payroll/[empid]",
+      "regex": "^/hr/payroll/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPempid": "nxtPempid"
+      },
+      "namedRegex": "^/hr/payroll/(?<nxtPempid>[^/]+?)(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/AboutUs",
+      "regex": "^/AboutUs(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/AboutUs(?:/)?$"
+    },
+    {
+      "page": "/Recruitment/addCandidates",
+      "regex": "^/Recruitment/addCandidates(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/Recruitment/addCandidates(?:/)?$"
+    },
+    {
+      "page": "/Recruitment/candidates",
+      "regex": "^/Recruitment/candidates(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/Recruitment/candidates(?:/)?$"
+    },
+    {
+      "page": "/Recruitment/form/docs_submitted",
+      "regex": "^/Recruitment/form/docs_submitted(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/Recruitment/form/docs_submitted(?:/)?$"
+    },
+    {
+      "page": "/Recruitment/recruitment",
+      "regex": "^/Recruitment/recruitment(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/Recruitment/recruitment(?:/)?$"
+    },
+    {
+      "page": "/ViewDetails",
+      "regex": "^/ViewDetails(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ViewDetails(?:/)?$"
+    },
+    {
+      "page": "/attendance/analytics",
+      "regex": "^/attendance/analytics(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/attendance/analytics(?:/)?$"
+    },
+    {
+      "page": "/attendance/leave",
+      "regex": "^/attendance/leave(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/attendance/leave(?:/)?$"
+    },
+    {
+      "page": "/attendance/manual",
+      "regex": "^/attendance/manual(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/attendance/manual(?:/)?$"
+    },
+    {
+      "page": "/compliance/ReportFillings",
+      "regex": "^/compliance/ReportFillings(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/compliance/ReportFillings(?:/)?$"
+    },
+    {
+      "page": "/compliance/auditLog",
+      "regex": "^/compliance/auditLog(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/compliance/auditLog(?:/)?$"
+    },
+    {
+      "page": "/compliance/documentCenter",
+      "regex": "^/compliance/documentCenter(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/compliance/documentCenter(?:/)?$"
+    },
+    {
+      "page": "/compliance/empCompliance",
+      "regex": "^/compliance/empCompliance(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/compliance/empCompliance(?:/)?$"
+    },
+    {
+      "page": "/compliance/policyAcknowledge",
+      "regex": "^/compliance/policyAcknowledge(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/compliance/policyAcknowledge(?:/)?$"
+    },
+    {
+      "page": "/compliance/statutoryCompliance",
+      "regex": "^/compliance/statutoryCompliance(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/compliance/statutoryCompliance(?:/)?$"
+    },
+    {
+      "page": "/dashboard",
+      "regex": "^/dashboard(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/dashboard(?:/)?$"
+    },
+    {
+      "page": "/employee/dashboard",
+      "regex": "^/employee/dashboard(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/employee/dashboard(?:/)?$"
+    },
+    {
+      "page": "/employee/documents",
+      "regex": "^/employee/documents(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/employee/documents(?:/)?$"
+    },
+    {
+      "page": "/employee/leave-request",
+      "regex": "^/employee/leave\\-request(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/employee/leave\\-request(?:/)?$"
+    },
+    {
+      "page": "/employee/login",
+      "regex": "^/employee/login(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/employee/login(?:/)?$"
+    },
+    {
+      "page": "/employee/profile",
+      "regex": "^/employee/profile(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/employee/profile(?:/)?$"
+    },
+    {
+      "page": "/employeeList",
+      "regex": "^/employeeList(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/employeeList(?:/)?$"
+    },
+    {
+      "page": "/hr/attendance",
+      "regex": "^/hr/attendance(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/hr/attendance(?:/)?$"
+    },
+    {
+      "page": "/hr/payroll/generate",
+      "regex": "^/hr/payroll/generate(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/hr/payroll/generate(?:/)?$"
+    },
+    {
+      "page": "/hr/payroll/payroll-view",
+      "regex": "^/hr/payroll/payroll\\-view(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/hr/payroll/payroll\\-view(?:/)?$"
+    },
+    {
+      "page": "/hr/performance/goals",
+      "regex": "^/hr/performance/goals(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/hr/performance/goals(?:/)?$"
+    },
+    {
+      "page": "/hr/performance/reports",
+      "regex": "^/hr/performance/reports(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/hr/performance/reports(?:/)?$"
+    },
+    {
+      "page": "/hr/view-leave-requests",
+      "regex": "^/hr/view\\-leave\\-requests(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/hr/view\\-leave\\-requests(?:/)?$"
+    },
+    {
+      "page": "/login",
+      "regex": "^/login(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/login(?:/)?$"
+    },
+    {
+      "page": "/registerEmployee",
+      "regex": "^/registerEmployee(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/registerEmployee(?:/)?$"
+    },
+    {
+      "page": "/signup",
+      "regex": "^/signup(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/signup(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "RSC",
+    "varyHeader": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch",
+    "prefetchHeader": "Next-Router-Prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSuffix": ".prefetch.rsc",
+    "prefetchSegmentHeader": "Next-Router-Segment-Prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments"
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  },
+  "rewrites": []
+}
