@@ -13,9 +13,11 @@ export default function Home() {
                 <div className="w-1/1 flex items-center justify-center bg-amber-10">
                     <Image 
                         src="/img3.jpg" 
+                        layout="responsive" 
                         width={600}
                         height={400}
-                        alt="" className=""
+                        alt="image" 
+                        className=""
                     />
                 </div>
 
