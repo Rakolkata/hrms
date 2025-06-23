@@ -1,5 +1,5 @@
 // /pages/api/hr/employees.js
-import db from "@/lib/db"; // Your MySQL/MariaDB connection pool
+import db from "@/lib/db"; 
 
 export default async function handler(req, res) {
   if (req.method !== "GET") {

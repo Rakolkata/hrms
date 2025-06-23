@@ -54,8 +54,9 @@ export default function Signup() {
 
         const data = await res.json();
         setMessage(data.message);
+        
         if (res.ok) {
-            router.push("/dashboard");
+            router.push("/login");
         }
     };
 
