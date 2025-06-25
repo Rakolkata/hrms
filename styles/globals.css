@@ -1,11 +1,3 @@
 @import "tailwindcss";
 
-@layer utilities {
-  .bg-chat {
-    background-image: url('/background.jpg');
-    background-repeat: repeat;
-    background-size: 250px 250px; /* Adjust size to fit the pattern */
-    background-color: #ffffff;
-  }
-}
 

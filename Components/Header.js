@@ -20,19 +20,23 @@ const Header = () => {
         <nav className="flex space-x-8 mt-4 md:mt-0 text-lg font-medium">
           <Link href="/" className="flex items-center space-x-2 hover:text-yellow-300 transition-all duration-200">
             <HiOutlineHome />
-            <span>Home</span>
+            <span>HOME</span>
           </Link>
           <Link href="/AboutUs" className="flex items-center space-x-2 hover:text-yellow-300 transition-all duration-200">
             <HiOutlineInformationCircle />
-            <span>About Us</span>
+            <span>ABOUT US</span>
           </Link>
-          <Link href="/contact" className="flex items-center space-x-2 hover:text-yellow-300 transition-all duration-200">
+          <Link href="/Contact" className="flex items-center space-x-2 hover:text-yellow-300 transition-all duration-200">
             <HiOutlineMail />
-            <span>Contact</span>
+            <span>CONTACT</span>
           </Link>
           <Link href="/signup" className="flex items-center space-x-2 hover:text-yellow-300 transition-all duration-200">
             <HiOutlineUserAdd />
-            <span>Signup</span>
+            <span>SIGNUP</span>
+          </Link>
+          <Link href="/login" className="flex items-center space-x-2 hover:text-yellow-300 transition-all duration-200">
+            <HiOutlineUserAdd />
+            <span>LOGIN</span>
           </Link>
         </nav>
       </header>

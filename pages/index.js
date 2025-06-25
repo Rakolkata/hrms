@@ -10,15 +10,15 @@ export default function Home() {
             <div className="flex flex-grow">
                 {/* Left Side - Image */}
                 
-                <div className="w-1/1 flex items-center justify-center bg-amber-10">
-                    <Image 
-                        src="/img3.jpg"
-                        width={600}
-                        height={400}
-                        alt="image" 
-                        className=""
-                    />
+                <div className="relative w-full h-screen">
+                <Image 
+                    src="/homePage.avif"
+                    alt="Homepage Background"
+                    fill
+                    className="z-0"
+                />
                 </div>
+
 
                 {/* Right Side - Welcome Text & Buttons */}
                 <div className="w-1/2 flex flex-col items-center justify-center bg-gray-50 text-center p-10">

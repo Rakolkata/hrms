@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
+import { FiMail, FiLock } from "react-icons/fi";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function EmployeeLogin() {
   const [email, setEmail] = useState("");
@@ -27,34 +30,78 @@ export default function EmployeeLogin() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
-        <h2 className="text-2xl font-semibold text-center text-gray-800 mb-4">Employee Login</h2>
-        <form onSubmit={handleLogin} className="space-y-3">
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email"
-            required
-            className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
-          />
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Password"
-            required
-            className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
-          />
-          <button
-            type="submit"
-            className="w-full bg-purple-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 transition duration-200"
-          >
-            Login
-          </button>
-        </form>
-        {message && <p className="mt-4 text-center text-red-500">{message}</p>}
+    <div className="min-h-screen flex flex-col pl-12">
+      {/* Two Columns */}
+      <div className="flex flex-grow">
+        {/* Left Side - Image */}
+                <div className="w-full relative h-screen">
+                        <Image 
+                            src="/emp.jpg"
+                            alt="Homepage Background"
+                            fill
+                            className="z-0"
+                        />
+                        </div>
+
+        {/* Right Side - Login Form */}
+        <div className="w-1/2 flex flex-col items-center justify-center bg-white text-center p-10">
+          <div className="bg-white p-10 rounded-lg shadow-xl w-full max-w-md">
+            {message && (
+              <p className="text-red-500 text-center mb-4">{message}</p>
+            )}
+
+            <h1 className="pb-8 text-center text-indigo-600 text-3xl font-medium mb-6">
+              EMPLOYEE LOGIN
+            </h1>
+
+            <form onSubmit={handleLogin} className="space-y-6">
+              {/* Email */}
+              <div className="flex items-center border-b-2 border-indigo-500 py-2">
+                <FiMail className="text-gray-500 mr-3" />
+                <input
+                  className="w-full bg-transparent text-purple-950 focus:outline-none text-center"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email"
+                  required
+                />
+              </div>
+
+              {/* Password */}
+              <div className="flex items-center border-b-2 border-indigo-500 py-2">
+                <FiLock className="text-gray-500 mr-3" />
+                <input
+                  className="w-full bg-transparent text-purple-950 focus:outline-none text-center"
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Enter your password"
+                  required
+                />
+              </div>
+
+              <div className="pt-8">
+                <button
+                  type="submit"
+                  className="w-full text-white py-2 rounded-md bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 transition duration-300"
+                >
+                  Login
+                </button>
+              </div>
+
+              {/* Optional: Back to main login */}
+              <div className="pt-3 w-full text-center space-y-2">
+                <Link
+                  href="/"
+                  className="inline-block text-gray-700"
+                >
+                  Back to <span className="text-indigo-600">Home</span>
+                </Link>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   );
