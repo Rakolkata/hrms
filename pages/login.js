@@ -95,7 +95,7 @@ export default function Login() {
                                 type="submit"
                                 className="  w-full text-white py-2 rounded-md bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 transition duration-300"
                                 >
-                                Login
+                                Sign In
                                 </button>
                                 </div>
                             <div className="pt-3 w-full text-center">

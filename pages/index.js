@@ -26,7 +26,7 @@ export default function Home() {
                     <p className="text-lg text-gray-600 text-center mt-6 mb-6">A Human Resource Management System (HRMS) is a powerful tool designed to streamline employee management and enhance workplace efficiency. Our system helps HR professionals, managers, and employees manage data, track performance, and simplify HR operations – all in one place.</p>
 
                     <div className="mt-6 space-x-6">
-                        <Link href="/login">
+                        {/*<Link href="/login">
                             <button className="px-6 py-2 bg-purple-600 text-white rounded hover:bg-blue-700 transition">
                                 Login
                             </button>
@@ -35,7 +35,7 @@ export default function Home() {
                             <button className="px-6 py-2 bg-purple-600 text-white rounded hover:bg-green-700 transition">
                                 Signup
                             </button>
-                        </Link>
+                        </Link>*/}
                     </div>
                 </div>
             </div>

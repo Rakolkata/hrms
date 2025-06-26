@@ -10,7 +10,9 @@ export default async function handler(req, res) {
 
   const { name, email, password } = req.body;
 
-  const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+  //const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+
+  const emailRegex = /^[a-z0-9._%+-]+@gmail\.com$/;
   if (!emailRegex.test(email)) {
     return res.status(400).json({ message: "Invalid email format." });
   }

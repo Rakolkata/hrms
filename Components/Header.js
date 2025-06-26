@@ -1,41 +1,41 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { FaUserTie } from "react-icons/fa";
+import { FaUserTie, FaUserCircle } from "react-icons/fa";
+import { FiLogOut } from "react-icons/fi";
 import {
   HiOutlineHome,
   HiOutlineInformationCircle,
   HiOutlineMail,
   HiOutlineUserAdd,
 } from "react-icons/hi";
-import jwtDecode from "jwt-decode";
 
 const Header = () => {
   const [user, setUser] = useState(null);
   const router = useRouter();
 
   useEffect(() => {
-    const getToken = () => {
-      const tokenCookie = document.cookie
-        .split("; ")
-        .find((row) => row.startsWith("token="));
-      return tokenCookie ? tokenCookie.split("=")[1] : null;
-    };
-
-    const token = getToken();
-    if (token) {
+    const fetchUser = async () => {
       try {
-        const decoded = jwtDecode(token);
-        setUser(decoded);
+        const res = await fetch("/api/auth/me");
+        if (res.ok) {
+          const data = await res.json();
+          setUser(data.user);
+        } else {
+          setUser(null);
+        }
       } catch (err) {
-        console.error("Invalid token:", err);
+        console.error("Failed to fetch user", err);
         setUser(null);
       }
-    }
-  }, []);
+    };
+
+    fetchUser();
+  }, [router.pathname]);
 
   const handleLogout = async () => {
     await fetch("/api/auth/logout");
+    document.cookie = "token=; Max-Age=0; path=/";
     setUser(null);
     router.push("/login");
   };
@@ -63,18 +63,17 @@ const Header = () => {
           </Link>
 
           {user ? (
-            <>
-              <span className="flex items-center space-x-2 text-yellow-200 font-semibold">
-                👋 {user.name}
-              </span>
+            <div className="flex items-center space-x-4 text-yellow-200 font-semibold">
+              <FaUserCircle size={24} />
+              <span>{user.name}</span>
               <button
                 onClick={handleLogout}
-                className="flex items-center space-x-2 hover:text-red-300"
+                className="flex items-center space-x-2 px-2 py-1 rounded hover:text-red-300 transition-all duration-200"
               >
-                <HiOutlineUserAdd />
-                <span>LOGOUT</span>
+                <FiLogOut size={20} />
+                <span>Logout</span>
               </button>
-            </>
+            </div>
           ) : (
             <>
               <Link href="/signup" className="flex items-center space-x-2 hover:text-yellow-300">

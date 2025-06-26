@@ -5,7 +5,7 @@ import Header from "@/Components/Header";
 export default function App({ Component, pageProps }) {
   return (
     <div className="min-h-screen w-full overflow-x-auto">
-      <Header />
+      <Header/> 
       <main className="min-w-full">
         <Component {...pageProps} />
       </main>

@@ -128,7 +128,12 @@ export default function Signup() {
                             <input
                                 type="email"
                                 value={email}
-                                onChange={(e) => setEmail(e.target.value)}
+                                onChange={(e) => setEmail(e.target.value.toLowerCase())}
+                                    onKeyDown={(e) => {
+                                        if (e.key === " ") {
+                                        e.preventDefault();
+                                        }
+                                    }}
                                 placeholder="Email"
                                 required
                                 className="w-full px-3 py-2 border-b-2 rounded-lg border-indigo-800 focus:ring-2 focus:ring-blue-500"
