@@ -239,7 +239,7 @@ export default function Signup() {
                                 </Link>
                                 <br />
                                 <Link href="/employee/login" className="text-gray-700 hover:text-indigo-600 transition-all duration-200">
-                                    Are You an Employee? <span className="text-indigo-600">Let's LogIn</span>
+                                    Are You an Employee? <span className="text-indigo-600">Let&rsquo;s LogIn</span>
                                 </Link>
                             </div>
                         </form>

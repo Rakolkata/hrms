@@ -32,7 +32,7 @@ export default function ContactPage() {
         <form className="md:w-1/2 space-y-5" ref={formRef} onSubmit={handleSubmit}>
           <h2 className="text-3xl pb-1 pt-3 font-bold text-indigo-600 text-center">CONTACT US</h2>
           <p className="text-indigo-600 text-center pb-5">
-            We'd love to hear from you! Whether you have a question or just want to say hello, our team is ready to assist you.
+            We&rsquo;d love to hear from you! Whether you have a question or just want to say hello, our team is ready to assist you.
           </p>
           
           {/* Inputs */}
