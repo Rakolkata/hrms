@@ -8,14 +8,14 @@ export default async function handler(req, res) {
     return res.status(405).json({ message: "Method Not Allowed" });
   }
 
-  const { name, email, password, role } = req.body;
+  const { name, email, password } = req.body;
 
   const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
   if (!emailRegex.test(email)) {
     return res.status(400).json({ message: "Invalid email format." });
   }
 
-  if (!name || !email || !password || !role) {
+  if (!name || !email || !password) {
     return res.status(400).json({ message: "All fields are required." });
   }
 
@@ -28,7 +28,7 @@ export default async function handler(req, res) {
     const empid = `${name.toLowerCase().replace(/\s/g, "")}_${Math.floor(1000 + Math.random() * 9000)}`;
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    const tokenPayload = { empid, name, email, role };
+    const tokenPayload = { empid, name, email };
     let token;
 
     try {
@@ -38,7 +38,7 @@ export default async function handler(req, res) {
     }
 
     const newUser = await prisma.users.create({
-      data: { empid, name, email, password: hashedPassword, role },
+      data: { empid, name, email, password: hashedPassword },
     });
 
     try {
@@ -54,7 +54,7 @@ export default async function handler(req, res) {
       return res.status(500).json({ message: "Failed to set cookie." });
     }
 
-    return res.status(201).json({ message: "Signup successful!", user: { empid, name, email, role } });
+    return res.status(201).json({ message: "Signup successful!", user: { empid, name, email } });
 
   } catch (error) {
     console.error("Signup Error:", error);
